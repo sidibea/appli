@@ -1,0 +1,12 @@
+admin_agent_index:
+    path:     /
+    defaults: { _controller: NBAdminBundle:Agent:index }
+admin_agent_new:
+    path:     /new
+    defaults: { _controller: NBAdminBundle:Agent:new }
+admin_agent_delete:
+    path:     /delete/{id}
+    defaults: { _controller: NBAdminBundle:Agent:delete }
+admin_agent_edit:
+    path:     /edit/{id}
+    defaults: { _controller: NBAdminBundle:Agent:edit }

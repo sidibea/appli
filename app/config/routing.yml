@@ -1,0 +1,8 @@
+nb_core:
+    resource: "@NBCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+nb_admin:
+    resource: "@NBAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+

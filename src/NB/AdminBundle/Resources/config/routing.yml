@@ -1,0 +1,6 @@
+nb_admin_homepage:
+    path:     /
+    defaults: { _controller: NBAdminBundle:Dashboard:index }
+in_main_agent:
+    resource: "@NBAdminBundle/Resources/config/routing/agent.yml"
+    prefix:   /agent-immobilier

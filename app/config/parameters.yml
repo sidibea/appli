@@ -1,0 +1,12 @@
+parameters:
+    database_host: ata-center.ml
+    database_port: 3306
+    database_name: atacente_app
+    database_user: atacente_app
+    database_password: Sorofing123@!
+    mailer_transport: smtp
+    mailer_host: mail.malinova.ml
+    mailer_user: sekou.sidibe@malinova.ml
+    mailer_password: Malinova@2020
+    secret: ThisTokenIsNotSoSecretChangeItz
+
