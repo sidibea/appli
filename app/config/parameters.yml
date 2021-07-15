@@ -1,3 +1,4 @@
+# This file is auto-generated during the composer install
 parameters:
     database_host: ata-center.ml
     database_port: 3306
@@ -9,4 +10,3 @@ parameters:
     mailer_user: sekou.sidibe@malinova.ml
     mailer_password: Malinova@2020
     secret: ThisTokenIsNotSoSecretChangeItz
-

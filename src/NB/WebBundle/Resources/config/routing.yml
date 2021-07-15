@@ -1,0 +1,3 @@
+nb_web_homepage:
+    path:     /
+    defaults: { _controller: NBWebBundle:Default:index }

@@ -1,0 +1,51 @@
+{% extends "NBAdminBundle::layout.html.twig" %}
+
+{% block title %} Liste des agents immobiliers {% endblock %}
+
+{% block content %}
+    <div class="col-md-12">
+        <div class="ms-panel">
+            <div class="ms-panel-header">
+                <div class="d-flex justify-content-between">
+                    <div class="ms-header-text">
+                        <h6>Liste des agents Immobiliers</h6>
+                    </div>
+                    <a href="{{ path('admin_bien_new') }}" class="ms-btn ms-btn-icon btn-primary ms-graph-metrics"><i class="fa fa-plus"></i> </a>
+                </div>
+            </div>
+            <div class="ms-panel-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Identifiants</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Agence</th>
+                            <th scope="col">Statut</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for a in list %}
+                            <tr>
+                                <td>{{ a.id }}</td>
+                                <td>{{ a.identifiant }}</td>
+                                <td>{{ a.typeDeBien }}</td>
+                                <td>{{ a.proprietaire.nom }}</td>
+                                <td>Libre</td>
+                                <td>
+                                    <a class="ms-btn-icon btn-square btn-primary" href="{{ path('admin_bien_edit', { 'id': a.id }) }}"><i class="fa fa-pencil-alt"></i> </a>
+                                    <a onclick="return confirm('Etes vous sur de vouloir supprimer cet element ?')"  class="ms-btn-icon btn-square btn-danger" href="{{ path('admin_agent_delete', { 'id': a.id }) }}"><i class="fa fa-trash"></i> </a>
+                                    <a   class="ms-btn-icon btn-square btn-success" href=""><i class="fa fa-eye"></i> </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

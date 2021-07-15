@@ -1,0 +1,9 @@
+admin_bien_index:
+    path:     /
+    defaults: { _controller: NBAdminBundle:Bien:index }
+admin_bien_new:
+    path:     /new
+    defaults: { _controller: NBAdminBundle:Bien:new }
+admin_bien_edit:
+    path:     /{id}/edit
+    defaults: { _controller: NBAdminBundle:Bien:edit }

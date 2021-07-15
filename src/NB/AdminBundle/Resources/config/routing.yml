@@ -4,3 +4,6 @@ nb_admin_homepage:
 in_main_agent:
     resource: "@NBAdminBundle/Resources/config/routing/agent.yml"
     prefix:   /agent-immobilier
+in_main_bien:
+    resource: "@NBAdminBundle/Resources/config/routing/biens.yml"
+    prefix:   /biens

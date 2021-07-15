@@ -18,13 +18,33 @@ class AgentController extends Controller
 {
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $list = $em->getRepository('NBCoreBundle:Agent')->findAll();
+        $headers = [
+            "Accept: application/json",
+            "Content-Type: application/json",
+
+        ];
+
+        $data = [
+            "email" => "admin@admin.com",
+            "password" => "123456",
+            "device_token" => "kd",
+            "role" => "admin"
+        ];
 
 
-        return $this->render('NBAdminBundle:agent:list.html.twig', [
-            'list' => $list
-        ]);
+        $ch = curl_init("http://api.assanti.ml/mobileapp_api/SuperAdmin/login" );
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        $return = curl_exec($ch);
+        $json_data = json_decode($return, true);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $data = $json_data['msg'];
+
+
+        dump($json_data); exit;
 
     }
 
